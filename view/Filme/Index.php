@@ -5,26 +5,30 @@ $listaFilmes = FilmeContext::ListarFilmes();
 
 ?>
 
-<table>
+<table class="table">
         <thead>
-            <th>
+            <th scope="col">
                 Id
-            </th>
+            </th scope="col">
 
-            <th>
+            <th scope="col">
                 Nome
-            </th>
+            </th scope="col">
 
-            <th>
+            <th scope="col">
                 Lançamento
-            </th>
+            </th scope="col">
 
-            <th>
+            <th scope="col">
                 Atores
+            </th scope="col">
+
+            <th scope="col">
+                Diretor
             </th>
 
             <th>
-                Diretor
+
             </th>
         </thead>
 
@@ -34,9 +38,9 @@ $listaFilmes = FilmeContext::ListarFilmes();
                 echo 
                 ("
                     <tr>
-                        <td>
+                        <th scope='row'>
                         $filme->id 
-                        </td>
+                        </th>
 
                         <td>
                         $filme->nome
@@ -52,6 +56,14 @@ $listaFilmes = FilmeContext::ListarFilmes();
 
                         <td>
                         $filme->diretor
+                        </td>
+
+                        <td>
+                            <form action='http://localhost/controller/FilmeController.php' method='post'>
+                                <input type='hidden' name='Metodo' value='Excluir'>
+                                <input type='hidden' name='id' value='$filme->id'>
+                                <button type='submit' class='btn btn-danger'>Excluir</button>
+                            </form>
                         </td>
                      </tr>
                 ");

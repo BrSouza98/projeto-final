@@ -1,5 +1,6 @@
 <div class="container">
     <form class="row" action="../controller/FilmeController.php" method="post">
+        <input type="hidden" name="Metodo" value="Cadastrar">
         <div class="col-2">
             <label for="codigo" class="form-label">
                 Código

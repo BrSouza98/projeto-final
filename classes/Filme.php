@@ -11,7 +11,7 @@ class Filme{
     {
         $this->id = $id;
         $this->nome = $nome;
-        $this->lancamento = $lancamento->format("d/m/Y");
+        $this->lancamento = $lancamento->format("Y-m-d");
         $this->atores = $atores;
         $this->diretor = $diretor;
     }
